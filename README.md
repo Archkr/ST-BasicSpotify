@@ -133,4 +133,4 @@ This repository contains two components that go in different locations:
 
 ## License
 
-MIT License
+GNU License
