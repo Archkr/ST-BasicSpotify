@@ -30,7 +30,7 @@ SillyTavern/public/scripts/extensions/third-party/
 
 ### 2. Install the Server Plugin
 
-Copy the `plugins/mpris` folder into your SillyTavern plugins directory:
+Copy the `mpris` folder into your SillyTavern plugins directory:
 
 ```
 SillyTavern/plugins/
