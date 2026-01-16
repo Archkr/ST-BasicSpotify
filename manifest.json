@@ -4,9 +4,9 @@
     "description": "Integrated Spotify player for SillyTavern.",
     "loading_order": 100,
     "version": "1.0.0",
-    "author": "Antigravity",
+    "author": "Archkr",
     "js": "index.js",
     "css": "style.css",
-    "homePage": "https://github.com/SillyTavern/SillyTavern",
-    "auto_update": false
+    "homePage": "https://github.com/Archkr/ST-BasicSpotify",
+    "auto_update": true
 }
