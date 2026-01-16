@@ -1,4 +1,3 @@
-
 import { extension_settings } from '../../../extensions.js';
 import { saveSettingsDebounced, getRequestHeaders } from '../../../../script.js';
 // toastr is global
@@ -647,7 +646,7 @@ jQuery(async () => {
     await loadSettings();
 
     // Load and inject settings.html into the Extensions settings panel
-    const extensionFolderPath = 'scripts/extensions/third-party/SillyTavern-Spotify';
+    const extensionFolderPath = 'scripts/extensions/third-party/ST-BasicSpotify';
     try {
         const settingsHtml = await $.get(`${extensionFolderPath}/settings.html`);
         $('#extensions_settings2').append(settingsHtml);
