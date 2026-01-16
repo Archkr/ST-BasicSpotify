@@ -1,4 +1,4 @@
-# SillyTavern Media Player
+# SillyTavern Basic Spotify Player
 
 A media player extension for SillyTavern that displays and controls your currently playing music. Works with any MPRIS-compatible media player on Linux (Spotify, VLC, Firefox, Cider, etc.) without needing API keys.
 
