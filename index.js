@@ -3,7 +3,7 @@ import { extension_settings } from '../../../extensions.js';
 import { saveSettingsDebounced, getRequestHeaders } from '../../../../script.js';
 // toastr is global
 
-const extensionName = "SillyTavern-Spotify";
+const extensionName = "ST-BasicSpotify";
 const defaultSettings = {
     clientId: '',
     accessToken: '',
