@@ -1,6 +1,6 @@
 {
     "name": "sillytavern-spotify",
-    "display_name": "Spotify Player",
+    "display_name": "Basic Spotify Player",
     "description": "Integrated Spotify player for SillyTavern.",
     "loading_order": 100,
     "version": "1.0.0",
