@@ -1,0 +1,100 @@
+<div id="spotify-player-settings" class="extension_container">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Media Player</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <div class="stp-shell">
+
+                <!-- Mode Selection -->
+                <div class="stp-glass-panel">
+                    <div class="stp-panel-header">
+                        <div class="stp-header-title">
+                            <i class="fa-solid fa-toggle-on stp-header-icon"></i>
+                            <span>Control Mode</span>
+                        </div>
+                    </div>
+                    <div class="stp-panel-content">
+                        <div class="stp-setting-row">
+                            <div class="stp-setting-info">
+                                <label class="stp-setting-label" for="spotify_use_mpris">Use Local Control
+                                    (MPRIS)</label>
+                                <p class="stp-setting-desc">Control any media player (Spotify, VLC, Firefox, etc.)
+                                    without API setup. Requires <code>playerctl</code> installed and
+                                    <code>enableServerPlugins: true</code> in config.yaml.
+                                </p>
+                            </div>
+                            <div class="stp-setting-control">
+                                <input type="checkbox" id="spotify_use_mpris" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auth Section (only for Spotify API mode) -->
+                <div class="stp-glass-panel" id="spotify_api_settings">
+                    <div class="stp-panel-header">
+                        <div class="stp-header-title">
+                            <i class="fa-solid fa-key stp-header-icon"></i>
+                            <span>Spotify API Authentication</span>
+                        </div>
+                    </div>
+                    <div class="stp-panel-content">
+                        <div class="stp-setting-row">
+                            <div class="stp-setting-info">
+                                <label class="stp-setting-label" for="spotify_client_id">Client ID</label>
+                                <p class="stp-setting-desc">Your Spotify App Client ID from the Developer Dashboard.</p>
+                            </div>
+                            <div class="stp-setting-control">
+                                <input type="text" id="spotify_client_id" class="text_pole" placeholder="e.g. 523..."
+                                    style="width: 220px;">
+                            </div>
+                        </div>
+
+                        <div class="stp-setting-row">
+                            <div class="stp-setting-info">
+                                <label class="stp-setting-label">Connection Status</label>
+                                <p class="stp-setting-desc">
+                                    Status: <span id="spotify_connection_status"
+                                        class="stp-status-disconnected">Disconnected</span>
+                                </p>
+                            </div>
+                            <div class="stp-setting-control" style="display: flex; gap: 10px;">
+                                <button id="spotify_connect_btn" class="menu_button interactable">
+                                    <i class="fa-solid fa-link"></i> Connect
+                                </button>
+                                <button id="spotify_disconnect_btn" class="menu_button interactable"
+                                    style="display: none;">
+                                    <i class="fa-solid fa-unlink"></i> Disconnect
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI Preferences -->
+                <div class="stp-glass-panel">
+                    <div class="stp-panel-header">
+                        <div class="stp-header-title">
+                            <i class="fa-solid fa-palette stp-header-icon"></i>
+                            <span>Interface</span>
+                        </div>
+                    </div>
+                    <div class="stp-panel-content">
+                        <div class="stp-setting-row">
+                            <div class="stp-setting-info">
+                                <label class="stp-setting-label" for="spotify_enable_panel">Enable Player Panel</label>
+                                <p class="stp-setting-desc">Show the floating music player sidebar.</p>
+                            </div>
+                            <div class="stp-setting-control">
+                                <input type="checkbox" id="spotify_enable_panel" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

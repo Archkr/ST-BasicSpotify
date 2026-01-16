@@ -1,0 +1,467 @@
+/* --- SillyTavern Spotify Player Styles - Glassmorphism Redesign --- */
+
+:root {
+    --stp-glass-bg: rgba(30, 30, 35, 0.7);
+    --stp-glass-border: rgba(255, 255, 255, 0.08);
+    --stp-glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --stp-accent-color: #1db954;
+    /* Spotify Green */
+    --stp-accent-gradient: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+    --stp-text-primary: rgba(255, 255, 255, 0.92);
+    --stp-text-secondary: rgba(255, 255, 255, 0.6);
+    --stp-danger-color: #ff453a;
+    --stp-success-color: #30d158;
+    --stp-card-bg: rgba(255, 255, 255, 0.03);
+    --stp-card-hover: rgba(255, 255, 255, 0.07);
+    --stp-input-bg: rgba(0, 0, 0, 0.2);
+}
+
+/* Main Settings Container - inherits SillyTavern styles */
+#spotify-player-settings {
+    /* No custom overrides - use ST defaults */
+}
+
+#spotify-player-settings .inline-drawer-content {
+    padding: 15px;
+    display: none;
+    /* Hidden by default, SillyTavern shows it when drawer opens */
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* When drawer is open, show content */
+#spotify-player-settings .inline-drawer.is-open .inline-drawer-content {
+    display: flex;
+}
+
+.stp-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Glass Panels */
+.stp-glass-panel {
+    background: var(--stp-glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--stp-glass-border);
+    border-radius: 16px;
+    box-shadow: var(--stp-glass-shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.stp-panel-header {
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--stp-glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.stp-panel-header:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.stp-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.stp-header-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--stp-accent-color);
+}
+
+.stp-panel-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Settings Row */
+.stp-setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stp-setting-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.stp-setting-info {
+    flex: 1;
+}
+
+.stp-setting-label {
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--stp-text-primary);
+}
+
+.stp-setting-desc {
+    font-size: 0.85em;
+    color: var(--stp-text-secondary);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Inputs */
+.stp-input {
+    background: var(--stp-input-bg);
+    border: 1px solid var(--stp-glass-border);
+    color: var(--stp-text-primary);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.95em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.stp-input:focus {
+    outline: none;
+    border-color: var(--stp-accent-color);
+    box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.2);
+}
+
+/* Toggle Switch */
+.stp-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+}
+
+.stp-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.stp-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.stp-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.stp-slider {
+    background-color: var(--stp-accent-color);
+}
+
+input:checked+.stp-slider:before {
+    transform: translateX(20px);
+}
+
+/* Buttons */
+.stp-btn {
+    background: var(--stp-card-bg);
+    border: 1px solid var(--stp-glass-border);
+    color: var(--stp-text-primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.stp-btn:hover {
+    background: var(--stp-card-hover);
+    transform: translateY(-1px);
+}
+
+.stp-btn-primary {
+    background: var(--stp-accent-gradient);
+    border: none;
+    color: #fff;
+}
+
+.stp-btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.4);
+}
+
+.stp-status-connected {
+    color: var(--stp-accent-color);
+    font-weight: bold;
+}
+
+.stp-status-disconnected {
+    color: var(--stp-text-secondary);
+}
+
+/* --- SIDEBAR PLAYER STYLES --- */
+#spotify-player-sidebar {
+    position: fixed;
+    /* bottom: 20px; handled dynamically or fixed preference */
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    background: rgba(20, 20, 20, 0.85);
+    /* Slightly darker for better contrast */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 15px;
+    z-index: 20000;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    transition: width 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Collapsed State - Minimal Pill */
+#spotify-player-sidebar.collapsed {
+    width: 40px;
+    /* Just enough for icon/chevron */
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #1db954;
+    /* Branding color when collapsed */
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.4);
+}
+
+#spotify-player-sidebar.collapsed .spotify-header,
+#spotify-player-sidebar.collapsed .spotify-track-info,
+#spotify-player-sidebar.collapsed .spotify-progress-bar-container,
+#spotify-player-sidebar.collapsed .spotify-controls {
+    display: none;
+}
+
+#spotify-player-sidebar.collapsed .spotify-collapse-btn {
+    display: flex;
+    position: static;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: white;
+}
+
+#spotify-player-sidebar.collapsed .spotify-collapse-btn i {
+    font-size: 1.2rem;
+}
+
+
+/* Normal State Styles */
+.spotify-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.spotify-brand {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #1db954;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.spotify-collapse-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.spotify-collapse-btn:hover {
+    color: white;
+}
+
+.spotify-track-info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.spotify-album-art {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    background: #333;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.spotify-track-details {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spotify-track-name {
+    font-weight: 600;
+    font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spotify-artist-name {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spotify-progress-bar-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.spotify-progress-bar-fill {
+    height: 100%;
+    background: #1db954;
+    width: 0%;
+    border-radius: 2px;
+    transition: width 0.5s linear;
+}
+
+.spotify-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+/* Time display */
+.spotify-time-display {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.7em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.spotify-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.1s, color 0.1s;
+}
+
+.spotify-btn:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.spotify-btn.small {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.spotify-btn.small:hover {
+    color: #1db954;
+}
+
+.spotify-btn.small.active {
+    color: #1db954;
+}
+
+/* Dot indicator under active buttons */
+.spotify-btn.small.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #1db954;
+}
+
+/* Repeat "1" indicator for track repeat */
+.spotify-btn .repeat-one {
+    position: absolute;
+    font-size: 0.5em;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1db954;
+    pointer-events: none;
+}
+
+.spotify-btn.play-pause {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.4);
+}
+
+.spotify-btn.play-pause:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(29, 185, 84, 0.5);
+}
